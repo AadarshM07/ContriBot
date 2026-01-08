@@ -10,10 +10,10 @@ load_dotenv()
 
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 
-TARGET_CHANNEL_ID = 1458380823907663894
+TARGET_CHANNEL_ID = os.getenv("CHANNEL_ID")
 
 ORGANIZATIONS = [
-    ""
+    ""  #add target organizations here
 ]
 
 POLL_INTERVAL_MINUTES = 30
@@ -106,7 +106,7 @@ async def check_github():
         org_name = issue["repository_url"].split("/")[-2]
 
         message = (
-            f"🆕 **New Help Wanted Issue**\n"
+            f"**New Help Wanted Issue**\n"
             f"**Org:** {org_name}\n"
             f"**Repo:** {repo}\n"
             f"**Title:** {title}\n"
